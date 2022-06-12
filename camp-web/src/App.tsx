@@ -17,30 +17,34 @@ const questions = css`
   padding-bottom: 32px;
 `;
 
-const answer = css``;
+const body = css`
+  padding: 10px;
+`;
 const App: Component = () => {
   return (
     <div class={container}>
-      <div class="">
+      <div>
         <h1>BBQどんだけ買えばいいいの？</h1>
-        <div class={questions}>
-          <Section title="人数は何人ですか？">
-            <NumberQuestion label="良く食べる人"></NumberQuestion>
-            <NumberQuestion label="普通の人"></NumberQuestion>
-            <NumberQuestion label="少食の人"></NumberQuestion>
-          </Section>
-          <Section title="食べたい物はなんですか？">
-            <CheckQuestion label="お肉" />
-            <CheckQuestion label="お魚" />
-            <CheckQuestion label="焼きそば" />
-          </Section>
-        </div>
-        <div class={answer}>
-          <Section title="購入の目安">
-            <div>お肉</div>
-            <div>お魚</div>
-            <div>焼きそば</div>
-          </Section>
+        <div class={body}>
+          <div class={questions}>
+            <Section title="人数は何人ですか？">
+              <NumberQuestion label="良く食べる人"></NumberQuestion>
+              <NumberQuestion label="普通の人"></NumberQuestion>
+              <NumberQuestion label="少食の人"></NumberQuestion>
+            </Section>
+            <Section title="食べたい物はなんですか？">
+              <CheckQuestion label="お肉" />
+              <CheckQuestion label="お魚" />
+              <CheckQuestion label="焼きそば" />
+            </Section>
+          </div>
+          <div>
+            <Section title="購入の目安">
+              <div>お肉</div>
+              <div>お魚</div>
+              <div>焼きそば</div>
+            </Section>
+          </div>
         </div>
       </div>
     </div>
