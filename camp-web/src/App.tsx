@@ -1,8 +1,9 @@
-import type { Component } from "solid-js";
+import { Component, For, onMount, useContext } from "solid-js";
 import { css } from "@emotion/css";
-import CheckQuestion from "./CheckQuestion";
-import Section from "./Section";
-import NumberQuestion from "./NumberQuestion";
+import Section from "./ui/Section";
+import NumberQuestion from "./ui/NumberQuestion";
+import CheckQuestion from "./ui/CheckQuestion";
+import { LoadFoodContext } from "./di";
 
 const container = css`
   display: flex;
@@ -21,6 +22,11 @@ const body = css`
   padding: 10px;
 `;
 const App: Component = () => {
+  const { state, loadFoods } = useContext(LoadFoodContext);
+  onMount(async () => {
+    await loadFoods();
+  });
+
   return (
     <div class={container}>
       <div>
@@ -33,16 +39,16 @@ const App: Component = () => {
               <NumberQuestion label="少食の人"></NumberQuestion>
             </Section>
             <Section title="食べたい物はなんですか？">
-              <CheckQuestion label="お肉" />
-              <CheckQuestion label="お魚" />
-              <CheckQuestion label="焼きそば" />
+              <For each={state.foods} fallback={<div>Loading...</div>}>
+                {(food, index) => <CheckQuestion label={food.name} />}
+              </For>
             </Section>
           </div>
           <div>
             <Section title="購入の目安">
-              <div>お肉</div>
-              <div>お魚</div>
-              <div>焼きそば</div>
+              <For each={state.foods} fallback={<div>Loading...</div>}>
+                {(food, index) => <div>{food.name} </div>}
+              </For>
             </Section>
           </div>
         </div>
