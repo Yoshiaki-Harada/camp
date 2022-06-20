@@ -1,11 +1,12 @@
 import { SetStoreFunction } from "solid-js/store";
 import { Foods } from "../domain/food";
-import { FoodOuputPort } from "../usecase/port/outputPort";
+import * as state from "../ui/state";
+import { FoodOuputPort } from "../usecase/outputPort";
 
 export const useFoodPresenter = (
-  setState: SetStoreFunction<{ foods: Foods }>
+  setState: SetStoreFunction<state.Foods>
 ): FoodOuputPort => ({
   set(foods: Foods): void {
-    setState("foods", (l) => foods);
+    setState((l) => foods);
   },
 });

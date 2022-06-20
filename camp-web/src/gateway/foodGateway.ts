@@ -1,6 +1,6 @@
 import { Foods } from "../domain/food";
 import { HttpGET } from "../driver/api";
-import { FoodInputPort } from "../usecase/port/inputPort";
+import { FoodInputPort } from "../usecase/inputPort";
 
 export const useFoodGateway = (htttpGet: HttpGET): FoodInputPort => ({
   async findAll(): Promise<Foods> {

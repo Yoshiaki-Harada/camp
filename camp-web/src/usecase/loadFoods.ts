@@ -1,5 +1,5 @@
-import { FoodInputPort } from "./port/inputPort";
-import { FoodOuputPort } from "./port/outputPort";
+import { FoodInputPort } from "./inputPort";
+import { FoodOuputPort } from "./outputPort";
 
 export const loadFoods = async ({
   inputPort,
