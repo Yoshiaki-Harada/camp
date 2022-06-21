@@ -4,28 +4,6 @@ import { SearchBBQFieldContext } from "../../container";
 import Card from "../01_atoms/Card";
 import NowrapText from "../01_atoms/NowrapText";
 
-const info = css`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  height: 100%;
-`;
-
-const card = css`
-  width: 640px;
-  height: 80px;
-`;
-
-const name = css`
-  font-weight: 700;
-  color: var(--black);
-`;
-const place = css`
-  font-weight: 300;
-  color: var(--gray);
-  font-size: small;
-`;
 export default () => {
   const { bbqFields } = useContext(SearchBBQFieldContext);
   return (
@@ -47,3 +25,25 @@ export default () => {
     </For>
   );
 };
+
+const info = css`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+`;
+
+const card = css`
+  width: 640px;
+  height: 80px;
+`;
+
+const name = css`
+  font-weight: 700;
+`;
+const place = css`
+  font-weight: 300;
+  color: var(--gray);
+  font-size: small;
+`;

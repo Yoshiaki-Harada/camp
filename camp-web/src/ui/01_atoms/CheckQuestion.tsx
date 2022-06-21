@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-const flexBox = css`
+const style = css`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,7 +10,7 @@ const flexBox = css`
 `;
 
 export default ({ label }: { label: string }) => (
-  <div class={flexBox}>
+  <div class={style}>
     <input name="question" type="checkbox" />
     <label for="question">{label}</label>
   </div>

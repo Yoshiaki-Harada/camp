@@ -1,17 +1,6 @@
 import { css } from "@emotion/css";
 import { JSXElement } from "solid-js";
 
-const style = css`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const titleStyle = css`
-  font-size: large;
-  margin: 0;
-`;
-
 export default ({
   title,
   children,
@@ -22,7 +11,25 @@ export default ({
   return (
     <section class={style}>
       <h2 class={titleStyle}>{title}</h2>
-      {children}
+      <div class={childrenStyle}>{children}</div>
     </section>
   );
 };
+
+const style = css`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px 0px 16px 4px;
+  border-bottom: 1px solid silver;
+  width: 480px;
+`;
+
+const titleStyle = css`
+  font-size: large;
+  margin: 0;
+`;
+
+const childrenStyle = css`
+  padding-left: 8px;
+`;

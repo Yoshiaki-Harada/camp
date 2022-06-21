@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import { Route, Routes } from "solid-app-router";
 import { Component, onMount, useContext } from "solid-js";
 import { LoadFoodContext, SearchBBQFieldContext } from "./container";
-import Sidebar from "./ui/03_organizms/Sidebar";
+import Sidebar from "./ui/01_atoms/Sidebar";
 import BBQFields from "./ui/04_templates/BBQFields";
 import HowManyFoods from "./ui/04_templates/HowManyFood";
 

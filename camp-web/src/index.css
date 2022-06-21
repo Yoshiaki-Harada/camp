@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --black: #212f3c;
   --gray: #566573;
+  color: var(--black);
 }
 
 code {
