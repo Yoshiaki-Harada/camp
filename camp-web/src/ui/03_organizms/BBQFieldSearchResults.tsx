@@ -10,7 +10,7 @@ export default () => {
     <For each={bbqFields} fallback={<div>Loading...</div>}>
       {(field, _) => (
         <div class={card}>
-          <Card>
+          <Card cover={field.cover}>
             <div class={info}>
               <span class={name}>
                 <NowrapText text={field.name} />
@@ -36,7 +36,7 @@ const info = css`
 
 const card = css`
   width: 640px;
-  height: 80px;
+  height: 120px;
 `;
 
 const name = css`

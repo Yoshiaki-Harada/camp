@@ -1,5 +1,5 @@
 import { SetStoreFunction } from "solid-js/store";
-import { BBQFields, displayName, displayPlace } from "../domain/bbq";
+import { BBQFields, displayName, displayPlace, getCover } from "../domain/bbq";
 import * as state from "../ui/state";
 import { BBQFieldOuputPort } from "../usecase/outputPort";
 
@@ -12,6 +12,7 @@ export const useBBQFieldPresenter = (
       bbqFields.map((e) => ({
         name: displayName(e.name),
         place: displayPlace(e.place),
+        cover: getCover(e.cover),
       }))
     );
   },

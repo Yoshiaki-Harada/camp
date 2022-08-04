@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { JSXElement } from "solid-js";
+import { JSXElement, Match, Switch } from "solid-js";
 
 const container = css`
   display: flex;
@@ -13,6 +13,8 @@ const container = css`
 `;
 const left = css`
   width: 120px;
+  height: 100%;
+  padding: 4px;
   margin-right: 20px;
 `;
 
@@ -23,11 +25,24 @@ const right = css`
   overflow: hidden;
 `;
 
-export default ({ children }: { children: JSXElement }) => {
-  return (
-    <div class={container}>
-      <div class={left}>Image..</div>
-      <div class={right}>{children}</div>
-    </div>
-  );
-};
+export default ({
+  cover,
+  children,
+}: {
+  cover: { src: string; type: string };
+  children: JSXElement;
+}) => (
+  <div class={container}>
+    <Switch fallback={<div>Not Found</div>}>
+      <Match when={cover.type === "Video"}>
+        <video class={left} controls>
+          <source src={cover.src} />
+        </video>
+      </Match>
+      <Match when={cover.type === "Image"}>
+        <img src={cover.src} class={left} />
+      </Match>
+    </Switch>
+    <div class={right}>{children}</div>
+  </div>
+);

@@ -20,7 +20,7 @@ const style = css`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 8px 0px 16px 4px;
+  padding: 16px 0px 16px 8px;
   border-bottom: 1px solid silver;
   width: 480px;
 `;
